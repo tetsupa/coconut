@@ -1,17 +1,16 @@
 <h1>New seat</h1>
-
-<%= form_for(@seat) do |f| %>
-  <% if @seat.errors.any? %>
+<%= form_for(seat) do |f| %>
+  <% if seat.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@seat.errors.count, "error") %> prohibited this seat from being saved:</h2>
+      <h2><%= pluralize(seat.errors.count, "error") %> prohibited this seat from being saved:</h2>
 
       <ul>
-      <% @seat.errors.full_messages.each do |msg| %>
+      <% seat.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
-  </div>
+  <% end %>
 
   <div class="field">
     <%= f.label :flight_id %><br />
